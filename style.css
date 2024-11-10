@@ -1,19 +1,87 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #10002b;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Contêiner do jogo */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*bordas */
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    gap: 3px;
+    gap: 5px;
+    background-color: #fff;
+    padding: 10px;
+    border: 3px solid #8e208e;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Estilo de cada quadrado */
 .square {
     width: 100px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #8e208e;
+    border: 2px solid #8e208e;
     cursor: pointer;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #c77dff;
+    transition: background-color 0.3s;
 }
-.status{
-   margin-top: 5%;
-   margin-left: 25%;
-    font-size: 30px;
+
+.square:hover {
+    background-color: #e0aaff;
+}
+
+/* Destacar quadrados */
+.winner {
+    animation: winner-animation 1s ease-in-out infinite alternate;
+    background-color: #7b2cbf;
+}
+
+/*vencedor */
+@keyframes winner-animation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/*status do jogo */
+.status {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+/* Botão de reiniciar */
+.reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #8e208e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+    background-color: #7a1b7a;
 }
